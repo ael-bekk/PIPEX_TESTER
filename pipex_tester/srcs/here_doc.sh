@@ -138,7 +138,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 4${RESET}"
-	printf "${WHITE}\tcat | wc -cl | grep 0 | sort | cat                    : ${RESET}"
+	printf "${WHITE}\tcat | wc -cl | grep 0 | sort | cat                              : ${RESET}"
 	timeout_2 "$1" here_doc lim "cat" "wc -cl" "grep 0" "sort" "cat" "outfile"
 	< in_file1 cat | wc -cl |  grep 0  | sort | cat >> outfile2
 	different=`diff outfile outfile2`
@@ -151,7 +151,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 5${RESET}"
-	printf "${WHITE}\tcat | sort | ls | cat | wc                                  : ${RESET}"
+	printf "${WHITE}\tcat | sort | ls | cat | wc                                      : ${RESET}"
 	timeout_2 "$1" here_doc lim2 "cat" "sort" "ls" "cat" "wc" "outfile"
 	< in_file2 cat | sort | ls | cat | wc  >> outfile2
 	different=`diff outfile outfile2`
@@ -179,7 +179,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "" > outfile
 
 	echo "${PURPLE}==============>Test 7${RESET}"
-	printf "${WHITE}\tcat | sort | cat /dev/random | ls| wc                     : ${RESET}"
+	printf "${WHITE}\tcat | sort | cat /dev/random | ls| wc                           : ${RESET}"
 	timeout2_1 "$1" here_doc lim "cat" "sort" "cat /dev/random" "ls" "wc" "outfile"
 	< in_file1 cat | sort | cat /dev/random | ls | wc >> outfile2
 	different=`diff outfile outfile2`
@@ -192,7 +192,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 8${RESET}"
-	printf "${WHITE}\tsleep 1 | sleep | 7 | sleep 8 | sleep 4 | sleep 2     : ${RESET}"
+	printf "${WHITE}\tsleep 1 | sleep | 7 | sleep 8 | sleep 4 | sleep 2               : ${RESET}"
 	SECONDS=0;
 	timeout2_1 "$1"  here_doc lim "sleep 1" "sleep 7" "sleep 8" "sleep 4" "sleep 2" "outfile"
 	if [ "$status" = "finished" ] && [ "$SECONDS" -eq "8" ]
@@ -204,7 +204,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 9${RESET}"
-	printf "${WHITE}\tsleep 9 | sleep 1 | sleep 3 | sleep 4 | sleep 5      : ${RESET}"
+	printf "${WHITE}\tsleep 9 | sleep 1 | sleep 3 | sleep 4 | sleep 5                 : ${RESET}"
 	SECONDS=0;
 	timeout2_1 "$1" here_doc lim "sleep 9" "sleep 1" "sleep 3" "sleep 4" "sleep 5" "outfile"
 	if [ "$status" = "finished" ] && [ "$SECONDS" -eq "9" ]
@@ -218,7 +218,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "" > outfile2
 
 	echo "${PURPLE}==============>Test 10${RESET}"
-	printf "${WHITE}\tsrcs/a.out | wc                                          : ${RESET}"
+	printf "${WHITE}\tsrcs/a.out | wc                                                 : ${RESET}"
 	timeout_1 "$1" here_doc lim2 "srcs/a.out" "wc" "outfile"
 	< in_file2 srcs/a.out | wc >> outfile2
 	different=`diff outfile outfile2`
