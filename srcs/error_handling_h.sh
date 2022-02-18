@@ -110,8 +110,8 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "${WHITE}\t'here_doc ' '' > cat /dev/random | head -n 5                           		   : ${RESET}"
 	timeout "$1" "here_doc " lim "cat /dev/random" "head -n 5" "outfile"
     find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
-    find_smae_err2=`cat my_error | grep -a "command not found\|command not found" | wc -l`
-	if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "1" ] && [ "$find_smae_err2" -eq "1" ] 
+    find_smae_err2=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
+	if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "1" ] && [ "$find_smae_err2" -eq "0" ] 
 	    then
 	    echo "${GREEN}[OK]${RESET}\n"
 	else
@@ -137,7 +137,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "${WHITE}\t'here_doc' 'lim ' > tcat  | wc | ls                                      		   : ${RESET}"
 	timeout_1 "$1" here_doc "lim2 " "cat" "wc" "ls" "outfile"
     find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
-    find_smae_err2=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+    find_smae_err2=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 	ls > outfile2
 	different=`diff outfile outfile2`
 	if [ "$status" = "interrupted" ] && [ "$different" = "" ] && [ "$find_smae_err" -eq "0" ] && [ "$find_smae_err2" -eq "0" ] 
