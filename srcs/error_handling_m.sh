@@ -81,7 +81,7 @@ touch outfile2
 echo "${PURPLE}==============>Test 2${RESET}"
 printf "${WHITE}\t< exist_input catds /dev/random | ls                                             : ${RESET}"
 timeout "$1" "in_file" "catds /dev/random" "ls" "outfile"
-find_smae_err=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+find_smae_err=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 ls > outfile2
 different=`diff outfile outfile2`
 if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "1" ] && [ "$different" = "" ] 
@@ -112,7 +112,7 @@ touch outfile2
 echo "${PURPLE}==============>Test 4${RESET}"
 printf "${WHITE}\t< exist_input csdfat | wsdfc -cl                                                 : ${RESET}"
 timeout "$1" "in_file" "cafat" "sdfwc -cl" "outfile"
-find_smae_err=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+find_smae_err=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "2" ]
     then
     echo "${GREEN}[OK]${RESET}\n"
@@ -126,7 +126,7 @@ echo "${PURPLE}==============>Test 5${RESET}"
 printf "${WHITE}\t< non_exist_input /bin/catsdc | wcss -cl                                         : ${RESET}"
 timeout "$1" "in_fisdle" "/bin/catsdc" "wcss -cl" "outfile"
 find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
-find_smae_err2=`cat my_error | grep "command not found\|command not found" | wc -l`
+find_smae_err2=`cat my_error | grep "command not found\|Command not found" | wc -l`
 if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "1" ] && [ "$find_smae_err" -eq "1" ]
     then
     echo "${GREEN}[OK]${RESET}\n"
