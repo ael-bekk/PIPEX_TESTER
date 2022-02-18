@@ -119,7 +119,7 @@ sleep 0.7
 	echo "${PURPLE}==============>Test 2${RESET}"
 	printf "${WHITE}\t< exist_input catds /dev/random | ls | wc -l                           		   : ${RESET}"
 	timeout_1 "$1" "in_file" "catds /dev/random" "ls" "wc -l" "outfile"
-	find_smae_err=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+	find_smae_err=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 	ls | wc -l > outfile2
 	different=`diff outfile outfile2`
 	if [ "$status" = "finished" ] && [ "$find_smae_err" -eq "1" ] && [ "$different" = "" ] 
@@ -136,7 +136,7 @@ sleep 0.7
 	printf "${WHITE}\t< non_exist_input cat /dev/random | wc | ls                            		   : ${RESET}"
 	timeout_1 "$1" "sdfin_file" "cat /dev/random" "wc" "ls" "outfile"
 	find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
-	find_smae_err2=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+	find_smae_err2=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 	ls > outfile2
 	different=`diff outfile outfile2`
 	if [ "$different" = "" ] && [ "$find_smae_err" -eq "1" ] && [ "$find_smae_err2" -eq "0" ] && [ "$different" = "" ]
@@ -150,7 +150,7 @@ sleep 0.7
 	echo "${PURPLE}==============>Test 4${RESET}"
 	printf "${WHITE}\t< exist_input csfat | wc -cl  | wasdc   |  grep 0  | so/rt | cat       		   : ${RESET}"
 	timeout_2 "$1" "in_file" "cewfat" "wc -cl" "wwefc" "grep 0" "so/rt" "cat" "outfile"
-	find_smae_err=`cat my_error | grep -a "command not found\|command not found" | wc -l`
+	find_smae_err=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 	find_smae_err2=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
 	printf "" > vide
 	< vide cat > outfile2
