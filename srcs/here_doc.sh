@@ -6,7 +6,7 @@
 #    By: ael-bekk <ael-bekk <ael-bekk@student.13    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 14:44:54 by ael-bekk          #+#    #+#              #
-#    Updated: 2022/02/17 17:00:33 by ael-bekk         ###   ########.fr        #
+#    Updated: 2022/02/19 11:53:23 by ael-bekk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,6 +154,19 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 5${RESET}"
+	printf "${WHITE}\tcat | cat | cat | cat | wc                                      : ${RESET}"
+	timeout_2 "$1" here_doc lim2 "cat" "cat" "cat" "cat" "wc" "outfile"
+	< in_file2 cat | cat | cat | cat | wc  >> outfile2
+	different=`diff outfile outfile2`
+	if [ "$status" = "finished" ] && [ "$different" = "" ]
+	    then
+	    echo "${GREEN}[OK]${RESET}\n"
+	else
+	    echo "${RED}[KO]${RESET}\n"
+	fi
+	sleep 0.7
+
+	echo "${PURPLE}==============>Test 6${RESET}"
 	printf "${WHITE}\tcat | sort | ls | cat | wc                                      : ${RESET}"
 	timeout_2 "$1" here_doc lim2 "cat" "sort" "ls" "cat" "wc" "outfile"
 	< in_file2 cat | sort | ls | cat | wc  >> outfile2
@@ -168,7 +181,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "" > outfile
 	printf "" > outfile2
 
-	echo "${PURPLE}==============>Test 6${RESET}"
+	echo "${PURPLE}==============>Test 7${RESET}"
 	printf "${WHITE}\tsleep 9 | sleep 4                                               : ${RESET}"
 	SECONDS=0;
 	timeout2 "$1" here_doc lim2 "sleep 9" "sleep 4" "outfile"
@@ -181,7 +194,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 	printf "" > outfile
 
-	echo "${PURPLE}==============>Test 7${RESET}"
+	echo "${PURPLE}==============>Test 8${RESET}"
 	printf "${WHITE}\tcat | sort | cat /dev/random | ls| wc                           : ${RESET}"
 	timeout2_1 "$1" here_doc lim "cat" "sort" "cat /dev/random" "ls" "wc" "outfile"
 	< in_file1 cat | sort | cat /dev/random | ls | wc >> outfile2
@@ -194,7 +207,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	fi
 	sleep 0.7
 
-	echo "${PURPLE}==============>Test 8${RESET}"
+	echo "${PURPLE}==============>Test 9${RESET}"
 	printf "${WHITE}\tsleep 1 | sleep | 7 | sleep 8 | sleep 4 | sleep 2               : ${RESET}"
 	SECONDS=0;
 	timeout2_1 "$1"  here_doc lim "sleep 1" "sleep 7" "sleep 8" "sleep 4" "sleep 2" "outfile"
@@ -206,7 +219,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	fi
 	sleep 0.7
 
-	echo "${PURPLE}==============>Test 9${RESET}"
+	echo "${PURPLE}==============>Test 10${RESET}"
 	printf "${WHITE}\tsleep 9 | sleep 1 | sleep 3 | sleep 4 | sleep 5                 : ${RESET}"
 	SECONDS=0;
 	timeout2_1 "$1" here_doc lim "sleep 9" "sleep 1" "sleep 3" "sleep 4" "sleep 5" "outfile"
@@ -220,7 +233,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	printf "" > outfile
 	printf "" > outfile2
 
-	echo "${PURPLE}==============>Test 10${RESET}"
+	echo "${PURPLE}==============>Test 11${RESET}"
 	printf "${WHITE}\tsrcs/a.out | wc                                                 : ${RESET}"
 	timeout "$1" here_doc lim2 "srcs/a.out" "wc" "outfile"
 	< in_file2 srcs/a.out | wc >> outfile2
