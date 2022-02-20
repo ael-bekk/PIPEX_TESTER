@@ -50,4 +50,8 @@ Some examples to run this tester :
 ./tester.sh -hp  (test one pipe and here_doc)
 ```
 
+## 📝 License
 
+This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
+
+---
