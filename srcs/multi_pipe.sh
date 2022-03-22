@@ -121,6 +121,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd asd as d asd\n asdasd a da
 	fi
 	sleep 0.7
 
+	touch outfile2
 	echo "${PURPLE}==============>Test 3${RESET}"
 	printf "${WHITE}\tcat /dev/random | wc | ls                                       : ${RESET}"
 	timeout_1 "$1" "in_file" "cat /dev/random" "wc" "ls" "outfile"
