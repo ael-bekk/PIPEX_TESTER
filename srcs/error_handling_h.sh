@@ -133,21 +133,6 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	fi
 	sleep 0.7
 
-    echo "${PURPLE}==============>Test 3${RESET}"
-	printf "${WHITE}\t'here_doc' 'lim ' > tcat  | wc | ls                                      		   : ${RESET}"
-	timeout_1 "$1" here_doc "lim2 " "cat" "wc" "ls" "outfile"
-    find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
-    find_smae_err2=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
-	ls > outfile2
-	different=`diff outfile outfile2`
-	if [ "$status" = "interrupted" ] && [ "$different" = "" ] && [ "$find_smae_err" -eq "0" ] && [ "$find_smae_err2" -eq "0" ] 
-	    then
-	    echo "${GREEN}[OK]${RESET}\n"
-	else
-	    echo "${RED}[KO]${RESET}\n"
-	fi
-	sleep 0.7
-
     printf "" > outfile
 	echo "${PURPLE}==============>Test 4${RESET}"
 	printf "${WHITE}\t'here_doc' '' > cat | head -n 7 | ls                                  	 	   : ${RESET}"
