@@ -134,7 +134,7 @@ echo "sgfefeqd qwdqwdddafasd s+64 65 30 9 2 92 ad asd lim asd as d asd\n asdasd 
 	sleep 0.7
 
     printf "" > outfile
-	echo "${PURPLE}==============>Test 4${RESET}"
+	echo "${PURPLE}==============>Test 3${RESET}"
 	printf "${WHITE}\t'here_doc' '' > cat | head -n 7 | ls                                  	 	   : ${RESET}"
 	timeout_1 "$1" here_doc "" "cat" "head -n 7" "ls" "outfile"
     find_smae_err=`cat my_error`
