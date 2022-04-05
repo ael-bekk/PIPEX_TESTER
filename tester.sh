@@ -117,7 +117,7 @@ fi
 
 for i in $(ps | grep -v zsh | grep -v TIME | grep -v tester.sh | cut -d" " -f 1)
 do
-  kill -9 $i
+  kill -9 $i &> /dev/null
 done
 
 rm -fr afsasf in_file2 in_file1 in_file in_file3 my_error outfile outfile2 ssssssss vide
