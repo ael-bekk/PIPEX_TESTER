@@ -1,4 +1,4 @@
-command not found\|Command not foundcommand not found\|Command not foundcommand not found\|Command not foundcommand not found\|Command not found# **************************************************************************** #
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    error_handling_m.sh                                :+:      :+:    :+:    #
