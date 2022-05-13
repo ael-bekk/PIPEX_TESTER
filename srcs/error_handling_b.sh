@@ -148,7 +148,7 @@ sleep 0.7
 	sleep 0.7
 
 	echo "${PURPLE}==============>Test 4${RESET}"
-	printf "${WHITE}\t< exist_input csfat | wc -cl  | wasdc   |  grep 0  | so/rt | cat       		   : ${RESET}"
+	printf "${WHITE}\t< exist_input csfat | wc -cl  | wasdc   |  grep 0  | sort | cat       		   : ${RESET}"
 	timeout_2 "$1" "in_file" "cewfat" "wc -cl" "wwefc" "grep 0" "so/rt" "cat" "outfile"
 	find_smae_err=`cat my_error | grep -a "command not found\|Command not found" | wc -l`
 	find_smae_err2=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
@@ -165,7 +165,7 @@ sleep 0.7
 
 
 	echo "${PURPLE}==============>Test 5${RESET}"
-	printf "${WHITE}\t< non_exist_input sleep 12 | sleep | 7 | sleep 8 | sleep 4 | sleep 5 | sleep 2   : ${RESET}"
+	printf "${WHITE}\t< non_exist_input sleep 12 | sleep | sleep 7 | sleep 8 | sleep 4 | sleep 5 | sleep 2   : ${RESET}"
 	SECONDS=0;
 	timeout2_1 "$1" "in_fiasfle" "sleep 12" "sleep 7" "sleep 8" "sleep 4" "sleep 5" "sleep 2" "outfile"
 	find_smae_err=`cat my_error | grep -a "no such file or directory\|No such file or directory" | wc -l`
