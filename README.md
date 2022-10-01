@@ -20,6 +20,8 @@ this tester test your program with some basics testes.</br>
 ## Preview :
 ![Screenshot](screen.gif)
 
+## DON'T FORGET TO DO STARE IF THE TESTER HELPED YOU
+
 ## How do i run this tester ?
 
 Disclaimer :
