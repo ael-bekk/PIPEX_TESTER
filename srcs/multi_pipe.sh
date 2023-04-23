@@ -23,12 +23,12 @@ WHITE="\033[1;37m"
 RESET="\033[0m"
 
 
-printf "\n\n\n\n${GREEN}test your pipex with multi-pipes :${RESET}"
+printf "\n\n\n\n${GREEN}test your pipex with multi-pipes :${RESET}\n"
 printf "$RED$l2$RESET"
 
 make fclean -C ..
 
-printf "${YELLOW}[make] :${RESET} your pipex : ${PURPLE}Bonus${RESET}"
+printf "${YELLOW}[make] :${RESET} your pipex : ${PURPLE}Bonus${RESET}\n"
 make bonus -C ..
 printf "$RED$l2$RESET"
 

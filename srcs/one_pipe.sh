@@ -28,7 +28,7 @@ printf "$RED$l2$RESET"
 
 make fclean -C ..
 
-printf "${YELLOW}[make] :${RESET} your pipex : ${PURPLE}Mandatory${RESET}"
+printf "${YELLOW}[make] :${RESET} your pipex : ${PURPLE}Mandatory${RESET}\n"
 make -C ../
 printf "$RED$l2$RESET"
 
